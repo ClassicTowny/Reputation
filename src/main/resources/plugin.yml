@@ -1,0 +1,17 @@
+name: ${project.build.finalName}
+version: ${project.version}
+description: ${project.description}
+author: Grossen
+website: ${project.url}
+main: me.grossen.reputation.Reputation
+
+commands:
+  reputation:
+    description: Check how much trusted a player is.
+    aliases: rep
+
+permissions:
+  reputation.check:
+    description: Gives access to /rep check <player>.
+  reputation.give:
+    description: Gives access to /rep set <player> <+/->.
