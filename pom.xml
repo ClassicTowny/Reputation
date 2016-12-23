@@ -6,7 +6,7 @@
 
     <groupId>me.grossen</groupId>
     <artifactId>Reputation</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <url>https://www.spigotmc.org/resources/reputation.31378/</url>
     <description>Let your players check how trusted a player is based on other players.</description>
