@@ -6,7 +6,7 @@
 
     <groupId>me.grossen</groupId>
     <artifactId>Reputation</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
 
     <url>https://www.spigotmc.org/resources/reputation.31378/</url>
     <description>Let your players check how trusted a player is based on other players.</description>
@@ -42,6 +42,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>http://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -49,6 +53,12 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.11.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.0.8</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +52,12 @@ public class Lang {
     }
 
     public void sendLang(LangType langType, CommandSender sender, boolean usePrefix, String... placeHolders) {
-        String s = StringUtil.format(loader.getString(langType.getPath()));
+        String s;
+        if (sender instanceof Player) {
+            s = StringUtil.format(loader.getString(langType.getPath()), (Player) sender);
+        } else {
+            s = StringUtil.format(loader.getString(langType.getPath()));
+        }
 
         if (StringUtils.isEmpty(s)) {
             return;

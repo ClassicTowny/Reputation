@@ -1,6 +1,7 @@
 package me.grossen.reputation;
 
 import me.grossen.reputation.language.Lang;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,8 @@ public class Reputation extends JavaPlugin {
 
     private File dataFile;
     private FileConfiguration dataLoader;
+
+    private static boolean placeholderAPIInstalled;
 
     @Override
     public void onEnable() {
@@ -37,6 +40,8 @@ public class Reputation extends JavaPlugin {
             }
         }
         dataLoader = YamlConfiguration.loadConfiguration(dataFile);
+
+        placeholderAPIInstalled = Bukkit.getPluginManager().getPlugin("PlaceHolderAPI") != null;
     }
 
     public Lang getLang() {
@@ -68,4 +73,9 @@ public class Reputation extends JavaPlugin {
             }
         }.runTaskAsynchronously(this);
     }
+
+    public static boolean isPlaceholderAPIInstalled() {
+        return placeholderAPIInstalled;
+    }
+
 }
